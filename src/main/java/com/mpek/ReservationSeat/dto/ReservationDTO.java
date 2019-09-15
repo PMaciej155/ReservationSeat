@@ -3,9 +3,11 @@ package com.mpek.ReservationSeat.dto;
 public class ReservationDTO {
     String name;
     String surname;
-    ReservationType reservationType;
+    ReservationTypeDTO reservationTypeDTO;
+    ScreeningDTO screening;
+    SeatDTO seat;
 
-    public enum ReservationType{
+    public enum ReservationTypeDTO{
         ADULT,
         STUDENT,
         CHILD

@@ -1,8 +1,6 @@
 package com.mpek.ReservationSeat.dto;
 
 public class MovieDTO {
-    String name;
+    String title;
     int lenght;
-
-
 }
