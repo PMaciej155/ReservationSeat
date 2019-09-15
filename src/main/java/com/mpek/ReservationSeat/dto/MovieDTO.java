@@ -4,4 +4,5 @@ public class MovieDTO {
     String name;
     int lenght;
 
+
 }
