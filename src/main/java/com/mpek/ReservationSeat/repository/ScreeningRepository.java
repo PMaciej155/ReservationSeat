@@ -6,4 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface ScreeningRepository extends CrudRepository<Screening, Long> {
+
 }

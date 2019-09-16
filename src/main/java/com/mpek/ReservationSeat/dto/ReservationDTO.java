@@ -1,11 +1,15 @@
 package com.mpek.ReservationSeat.dto;
 
+
+import java.util.Map;
+
 public class ReservationDTO {
-    String name;
-    String surname;
-    ReservationTypeDTO reservationTypeDTO;
-    ScreeningDTO screening;
-    SeatDTO seat;
+    private long id;
+    private String name;
+    private String surname;
+    private ReservationTypeDTO reservationTypeDTO;
+    private ScreeningDTO screeningDTO;
+    private Map<SeatDTO, ReservationTypeDTO> seatDTOs;
 
     public enum ReservationTypeDTO{
         ADULT,

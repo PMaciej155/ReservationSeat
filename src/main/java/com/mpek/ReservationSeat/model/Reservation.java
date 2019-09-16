@@ -3,6 +3,7 @@ package com.mpek.ReservationSeat.model;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import java.util.Map;
 
 @Entity
 public class Reservation {
@@ -14,7 +15,7 @@ public class Reservation {
     String surname;
     ReservationType reservationType;
     Screening screening;
-    Seat seat;
+    Map<Seat, ReservationType> seats;
 
     public enum ReservationType {
         ADULT,

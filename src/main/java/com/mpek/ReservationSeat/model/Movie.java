@@ -9,8 +9,6 @@ public class Movie {
     @Id
     @GeneratedValue
     public long id;
-
     String title;
-
     int lenght;
 }

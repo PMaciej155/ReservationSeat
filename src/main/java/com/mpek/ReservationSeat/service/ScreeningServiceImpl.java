@@ -3,19 +3,18 @@ package com.mpek.ReservationSeat.service;
 import com.mpek.ReservationSeat.dto.ScreeningDTO;
 import org.springframework.stereotype.Service;
 
-import java.util.Date;
 import java.util.List;
 
 @Service
-public class ScreeningServiceImpl implements ScreeningService{
+public class ScreeningServiceImpl implements IScreeningService {
 
     @Override
-    public List<String> showScreenings(Date startInterval, Date endInterval) {
+    public List<String> showScreenings(Integer startInterval, Integer endInterval) {
         return null;
     }
 
     @Override
-    public ScreeningDTO showDetailsScreening(Date dateOfScreening, String titleOfMovie) {
+    public ScreeningDTO showDetailsScreening(Integer dateOfScreening, String titleOfMovie) {
         return null;
     }
 }
