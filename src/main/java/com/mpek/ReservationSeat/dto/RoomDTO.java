@@ -3,5 +3,7 @@ package com.mpek.ReservationSeat.dto;
 import java.util.List;
 
 public class RoomDTO {
-    List<SeatDTO> seats;
+    private long id;
+    private int number;
+    private List<SeatDTO> seats;
 }
