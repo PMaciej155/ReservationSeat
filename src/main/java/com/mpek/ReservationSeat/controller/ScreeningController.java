@@ -15,10 +15,15 @@ public class ScreeningController {
     IScreeningService screeningService;
 
     @GetMapping("")
-    public String getScreenings(@PathVariable("start") Integer startOfScreening, @PathVariable("end") Integer endOfScreening){
+    public String getScreenings(@PathVariable("start") Integer startOfScreening, @PathVariable("end") Integer endOfScreening) throws Exception {
+        if (startOfScreening == null)
+            throw new Exception("no screening");
+        if (endOfScreening == null)
+            throw new Exception("no screening");
 
         screeningService.showScreenings(startOfScreening, endOfScreening);
-     return "Test";
+
+        return "Test";
     }
 
     @GetMapping("details")
