@@ -1,11 +1,12 @@
 package com.mpek.ReservationSeat.controller;
 
+import com.mpek.ReservationSeat.dto.ScreeningDetailsDTO;
+import com.mpek.ReservationSeat.dto.ScreeningSimpleDTO;
 import com.mpek.ReservationSeat.service.IScreeningService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("api/screenings")
@@ -14,20 +15,27 @@ public class ScreeningController {
     @Autowired
     IScreeningService screeningService;
 
+    @GetMapping("all")
+    @ResponseBody
+    public List<ScreeningSimpleDTO> getAllScreenings() {
+        return screeningService.showAllScreenings();
+    }
+
     @GetMapping("")
-    public String getScreenings(@PathVariable("start") Integer startOfScreening, @PathVariable("end") Integer endOfScreening) throws Exception {
-        if (startOfScreening == null)
-            throw new Exception("no screening");
-        if (endOfScreening == null)
-            throw new Exception("no screening");
 
-        screeningService.showScreenings(startOfScreening, endOfScreening);
+    public List<ScreeningSimpleDTO> getScreenings(@RequestParam("date") Integer dayOfScreening, @RequestParam("start") Integer startOfScreening, @RequestParam("end") Integer endOfScreening) throws Exception {
 
-        return "Test";
+        return screeningService.showScreenings(dayOfScreening, startOfScreening, endOfScreening);
     }
 
     @GetMapping("details")
-    public String getDetailsOfScreening(@PathVariable("start") Integer startOfScreening, @PathVariable("title") String movieTitle){
-        return "Test2";
+    public ScreeningDetailsDTO getDetailsOfScreening(@RequestParam("id") long idOfScreening) {
+        ScreeningDetailsDTO detailedScreening = new ScreeningDetailsDTO();
+        try {
+            detailedScreening = screeningService.showDetailsScreening(idOfScreening);
+        } catch (Exception e) {
+
+        }
+        return detailedScreening;
     }
 }

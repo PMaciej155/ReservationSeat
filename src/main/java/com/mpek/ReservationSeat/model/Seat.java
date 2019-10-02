@@ -15,10 +15,31 @@ public class Seat {
     @NotNull
     private long id;
 
-    //    @ManyToOne(cascade = CascadeType.ALL)
-//    @JoinColumn(name = "room_id")
-//    private Room room;
     private int rowOfSeat;
     private int numberOfSeat;
-    private boolean isTaken;
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public int getRowOfSeat() {
+        return rowOfSeat;
+    }
+
+    public void setRowOfSeat(int rowOfSeat) {
+        this.rowOfSeat = rowOfSeat;
+    }
+
+    public int getNumberOfSeat() {
+        return numberOfSeat;
+    }
+
+    public void setNumberOfSeat(int numberOfSeat) {
+        this.numberOfSeat = numberOfSeat;
+    }
+
 }
