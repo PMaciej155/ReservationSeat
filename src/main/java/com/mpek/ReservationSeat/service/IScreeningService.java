@@ -1,11 +1,15 @@
 package com.mpek.ReservationSeat.service;
 
-import com.mpek.ReservationSeat.dto.ScreeningDTO;
+
+import com.mpek.ReservationSeat.dto.ScreeningDetailsDTO;
+import com.mpek.ReservationSeat.dto.ScreeningSimpleDTO;
 
 import java.util.List;
 
 public interface IScreeningService {
-    List<ScreeningDTO> showScreenings(Integer startInterval, Integer endInterval);
+    List<ScreeningSimpleDTO> showScreenings(Integer dayOfScreening, Integer startInterval, Integer endInterval) throws Exception;
 
-    ScreeningDTO showDetailsScreening(Integer dateOfScreening, String titleOfMovie);
+    List<ScreeningSimpleDTO> showAllScreenings();
+
+    ScreeningDetailsDTO showDetailsScreening(Long idOfScreening) throws Exception;
 }
