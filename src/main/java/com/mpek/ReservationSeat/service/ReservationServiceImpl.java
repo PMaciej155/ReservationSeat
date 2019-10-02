@@ -1,7 +1,6 @@
 package com.mpek.ReservationSeat.service;
 
 
-import com.mpek.ReservationSeat.exception.BookingTimeoutException;
 import com.mpek.ReservationSeat.exception.FreeGapSeatException;
 import com.mpek.ReservationSeat.model.Reservation;
 import com.mpek.ReservationSeat.model.ReservationType;
@@ -68,8 +67,8 @@ public class ReservationServiceImpl implements IReservationService {
             e.printStackTrace();
         }
 
-        if (isTimeout(reservation.getCreationDay(), screening.getDayOfScreening(), screening.getTimeOfScreening()) != 1)
-            throw new BookingTimeoutException("Too late for reservation");
+//        if (isTimeout(reservation.getCreationDay(), screening.getDayOfScreening(), screening.getTimeOfScreening()) != 1)
+//            throw new BookingTimeoutException("Too late for reservation");
 
 
         reservation.setExprationDay(Date
